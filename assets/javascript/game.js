@@ -22,37 +22,33 @@ $(function () {
         rnDiv.append("Number to match: " + randomNum);
         winLoseDiv.text("Wins: " + wins + " " + "Losses: " + losses + " " + comments);
         scoreDiv.append("Your score: " + score);
-        console.log(score, randomNum);
         $("button").click(function () {
             if (this.id === "blue") {
                 score = score + blueValue;
                 scoreDiv.text("Your score: " + score);
-                // console.log(blueValue);
             } if (this.id === "green") {
                 score = score + greenValue;
                 scoreDiv.text("Your score: " + score);
-                // console.log(greenValue);
             } if (this.id === "red") {
                 score = score + redValue;
                 scoreDiv.text("Your score: " + score);
-                // console.log(redValue);
             } if (this.id === "yellow") {
                 score = score + yellowValue;
                 scoreDiv.text("Your score: " + score);
-                // console.log(yellowValue);
             };
             if (score === randomNum) {
                 comments = "You Win!";
                 wins++;
-                console.log(wins);
                 winLoseDiv.text("Wins: " + wins + " " + "Losses: " + losses + " " + comments);
                 reset();
+                randomNumGenerator();
             } else if (score > randomNum) {
                 comments = "You Lose!";
                 losses++;
-                console.log(losses);
                 winLoseDiv.text("Wins: " + wins + " " + "Losses: " + losses + " " + comments);
                 reset();
+                randomNumGenerator();
+                
             }
         });
         function reset() {
@@ -61,6 +57,14 @@ $(function () {
             losses;
             comments = "";
             scoreDiv.text("Your score: " + score);
+        };
+        function randomNumGenerator(){
+            randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+            blueValue = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+            greenValue = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+            redValue = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+            yellowValue = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+            rnDiv.text("Number to match: " + randomNum);
         };
     };
     startGame();
