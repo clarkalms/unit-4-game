@@ -1,0 +1,28 @@
+header h1 {
+    font-weight: 900;
+    font-size: 44px;
+}
+p {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 50px auto;
+}
+
+/* Buttons */
+button {
+    height: 100px;
+    width: 100px;
+     
+}
+#blue {
+    background-image: url("../images/bluegem.jpeg");
+}   
+#green {
+    background-image: url("../images/greengem.jpeg");
+}
+#red {
+    background-image: url("../images/redgem.png");
+}
+#yellow {
+    background-image: url("../images/yellowgem.jpeg");
+}
