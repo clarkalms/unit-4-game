@@ -57,6 +57,7 @@ $(function () {
             losses;
             comments = "";
             scoreDiv.text("Your score: " + score);
+            
         };
         function randomNumGenerator(){
             randomNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
